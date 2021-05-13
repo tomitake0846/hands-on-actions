@@ -1,2 +1,2 @@
 # hands-on-actions
-Pythonde
+PythonでGitHub Actionsを試してみる
