@@ -1,27 +1,41 @@
 name: Python package
 
-on: [push]
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
 
 jobs:
   build:
-
+    # CIを使うベースのOSを指定します。
     runs-on: ubuntu-latest
-    timeout-minutes: 10 # job全体のタイムアウト時間
+    # job全体のタイムアウト時間
+    timeout-minutes: 10
+    # チャレンジ問題用なので、挑戦される方はコメントを外して使ってください。
+#    env:
+#      IMAGE_NAME: python-sample
     strategy:
       matrix:
         python-version: [3.5, 3.6, 3.7, 3.8, 3.9]
 
     steps:
+    # Actionsで使うpipパッケージをインストール
     - uses: actions/checkout@v2
+    # Actionsで使うpipパッケージをインストール
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+    # Actionsで使うpipパッケージをインストール
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    # flake8で構文チェック
     - name: Lint with flake8
       run: |
         # Python 構文エラーまたは未定義の名前がある場合はビルドを停止する
@@ -29,6 +43,30 @@ jobs:
         # exit-zeroはすべてのエラーを警告として扱う。 GitHubのエディタの幅は127文字
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
+    # テストコードの実行
     - name: Test with pytest
       run: |
         pytest test/test.py
+
+    # チャレンジ問題用なので、挑戦される方はコメントを外して使ってください。
+#    - name: Login to GitHub Container Registry
+#      uses: docker/login-action@v1
+#      with:
+#        registry: ghcr.io
+#        username: ${{ secrets.GHCR_USERNAME }}
+#        password: ${{ secrets.GHCR_ACCESS_TOKEN }}
+#
+#    - name: Set up Docker Buildx
+#      id: buildx
+#      uses: docker/setup-buildx-action@v1
+#
+#    - name: Build and push
+#      id: docker_build
+#      uses: docker/build-push-action@v2
+#      with:
+#        context: .
+#        file: ./Dockerfile
+#        push: true
+#        tags: |
+#          ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
+#          ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
