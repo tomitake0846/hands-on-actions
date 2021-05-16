@@ -18,3 +18,6 @@ PythonでGitHub Actionsを試してみましょう。<br>
       ├── __init__.py
       └── test.py → pythonのテストコード
   ```
+
+# CIをスキップする場合
+Commitメッセージに[skip ci]を追加してください。
