@@ -2,6 +2,7 @@
 PythonでGitHub Actionsを試してみましょう。<br>
 このリポジトリはサンプルですので、ご自身のGitHubのリポジトリにForkしてください。
 
+## 構成
 構成はこんな感じになっています。
   ```bash
   ├── .dockerignore
