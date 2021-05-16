@@ -7,13 +7,13 @@ PythonでGitHub Actionsを試してみましょう。<br>
   ├── .dockerignore
   ├── .github
   │   └── workflows
-  │       └── python-app.yml -> GitHub Actionsのワークフローのymlファイル
-  ├── Dockerfile -> チャレンジ問題用のDockerfile
-  ├── README.md　-> このファイル
-  ├── requirements.txt -> pipのパッケージを定義
+  │       └── python-app.yml → GitHub Actionsのワークフローのymlファイル
+  ├── Dockerfile → チャレンジ問題用のDockerfile
+  ├── README.md　→ このファイル
+  ├── requirements.txt → pipのパッケージを定義
   ├── srcs
-  │   └── app.py -> pyhtonのソースコード
+  │   └── app.py → pyhtonのソースコード
   └── test
       ├── __init__.py
-      └── test.py -> pythonのテストコード
+      └── test.py → pythonのテストコード
   ```
