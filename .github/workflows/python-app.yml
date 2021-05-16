@@ -39,5 +39,5 @@ jobs:
       # 今回はpublic repositoryのためKEYは不要だが、privateなら必要なので注意
       if: ${{ matrix.python-version==3.9 }}
       uses: codecov/codecov-action@v1
-      with:
+      #with:
         #token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
