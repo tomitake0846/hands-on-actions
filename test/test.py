@@ -1,7 +1,7 @@
 import pytest
 import sys
 sys.path.append('srcs')
-from app import additionå
+from app import addition
 
 def test_addition():
     actual = addition(3, 4)
