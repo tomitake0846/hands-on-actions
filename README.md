@@ -1,5 +1,5 @@
 # hands-on-actions
-PythonでGitHub Actionsを試してみましょう。
+PythonでGitHub Actionsを試してみましょう。<br>
 このリポジトリはサンプルですので、ご自身のGitHubのリポジトリにForkしてください。
 
 構成はこんな感じになっています。
