@@ -24,9 +24,9 @@ def test_addition3():
     assert exceeded == actual
 
 def test_abnormal():
-    with pytest.raises(TypeError)
+    with pytest.raises(TypeError):
         addition('a', 1)
 
 def test_abnormal2():
-    with pytest.raises(TypeError)
+    with pytest.raises(TypeError):
         addition(1, 'b')
