@@ -18,12 +18,17 @@ def test_addition3():
     exceeded = -1
     assert exceeded == actual
 
+def test_addition3():
+    actual = addition(0, 0)
+    exceeded = 0
+    assert exceeded == actual
+
 def test_abnormal():
-    actual = addition(a, 1)
+    actual = addition('a', 1)
     exceeded = 'Invalid input'
     assert exceeded == actual
 
 def test_abnormal2():
-    actual = addition(1, b)
+    actual = addition(1, 'b')
     exceeded = 'Invalid input'
     assert exceeded == actual
