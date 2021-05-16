@@ -24,11 +24,9 @@ def test_addition3():
     assert exceeded == actual
 
 def test_abnormal():
-    actual = addition('a', 1)
-    exceeded = 'Invalid input'
-    assert exceeded == actual
+    with pytest.raises(TypeError)
+        addition('a', 1)
 
 def test_abnormal2():
-    actual = addition(1, 'b')
-    exceeded = 'Invalid input'
-    assert exceeded == actual
+    with pytest.raises(TypeError)
+        addition(1, 'b')
