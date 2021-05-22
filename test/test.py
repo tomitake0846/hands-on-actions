@@ -23,10 +23,10 @@ def test_addition3():
     exceeded = 0
     assert exceeded == actual
 
-def test_abnormal():
+def test_char1():
     with pytest.raises(TypeError):
         addition('a', 1)
 
-def test_abnormal2():
+def test_char2():
     with pytest.raises(TypeError):
         addition(1, 'b')
