@@ -50,6 +50,8 @@ jobs:
         pytest test/test.py
 
     # チャレンジ問題用なので、挑戦される方はコメントを外して使ってください。
+    # コンテナイメージの格納先にはGitHub Container Registryを使用します。
+    # 使用する際はsecretの登録が必要になります。
 #    - name: Login to GitHub Container Registry
 #      uses: docker/login-action@v1
 #      with:
